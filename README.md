@@ -21,7 +21,7 @@ If user and password are specified, the app will perform auto login to the confe
 ```
 
 # Expected output
-![Skype WebView Screenshot](https://github.com/cristipotlog/skype-webview/tree/master/Screenshots/sample-login.png)
+![Skype WebView Screenshot](https://raw.githubusercontent.com/cristipotlog/skype-webview/master/Screenshots/sample-login.png)
 
 # Release notes
 - May 17, 2016: Initial commit
