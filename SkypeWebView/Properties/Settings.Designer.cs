@@ -49,5 +49,14 @@ namespace SkypeWebView.Properties {
                 return ((string)(this["ProfilePassword"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-us")]
+        public string ProfileLanguage {
+            get {
+                return ((string)(this["ProfileLanguage"]));
+            }
+        }
     }
 }

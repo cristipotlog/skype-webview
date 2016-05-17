@@ -21,7 +21,7 @@ namespace SkypeWebView
         private void webBrowser_Navigated( object sender, WebBrowserNavigatedEventArgs e )
         {
             // wait for right page (there are multiple page redirects)
-            if( e.Url.AbsolutePath != "/lwa/WebPages/LwaClient.aspx" )
+            if( e.Url.AbsolutePath != @"/lwa/WebPages/LwaClient.aspx" )
             {
                 return;
             }
@@ -33,8 +33,15 @@ namespace SkypeWebView
                 HtmlElement elem = document.GetElementById( "launchReachFrame" );
                 if( elem != null )
                 {
-                    // reload i-frame in main window (force romanian locale)
-                    document.Window.Navigate( elem.GetAttribute( "src" ) + "&reachLocale=ro-ro" );
+                    // get i-frame source url
+                    string redirectUrl = elem.GetAttribute( "src" );
+                    // add user locale (if configured)
+                    if( string.IsNullOrEmpty( Properties.Settings.Default.ProfileLanguage ) == false )
+                    {
+                        redirectUrl = string.Format( @"{0}&reachLocale={1}", redirectUrl, Properties.Settings.Default.ProfileLanguage );
+                    }
+                    // reload i-frame in main browser window
+                    document.Window.Navigate( redirectUrl );
                     return;
                 }
             }

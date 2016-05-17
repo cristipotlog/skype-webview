@@ -11,5 +11,8 @@
     <Setting Name="ProfilePassword" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ProfileLanguage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">en-us</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
